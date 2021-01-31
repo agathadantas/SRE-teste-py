@@ -11,5 +11,5 @@
 3. Digite o comando: "python3 main.py"
 
 ## Referências para elaboração do projeto: 
-[documentação][https://docs.thecatapi.com/]
-[Doc Postman][https://documenter.getpostman.com/view/5578104/RWgqUxxh#intro]
+[documentação](https://docs.thecatapi.com/)
+[Doc Postman](https://documenter.getpostman.com/view/5578104/RWgqUxxh#intro)
