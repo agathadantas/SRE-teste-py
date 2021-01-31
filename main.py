@@ -3,9 +3,9 @@ import requests
 
 
 def main():
-    print('####################')
-    print('### The Cat API ####')
-    print('####################\n')
+    print('#####################################')
+    print('############ The Cat API ############')
+    print('#####################################\n')
 
     request = requests.get(
         'https://api.thecatapi.com/v1/breeds')
@@ -40,7 +40,7 @@ def main():
         img = requestImg.json()
 
         print('RAÇA: ' + breed)
-        #print('id: ' + id_User)
+        # print('id: ' + id_User)
         print('ORIGEM: ' + origin)
         print('TEMPERAMENTO: ' + temperament)
         print('DESCRIÇÃO: ' + description)
@@ -69,7 +69,66 @@ def main():
 
     # print(x)
 
-    print('---------------------------------')
+    print('-----------------------------------------------')
+
+    print('==> Gatos com Chapéu <==\n')
+    hats = str
+    catHats = str
+
+    hatsRequest = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=1')
+    hats = hatsRequest.json()
+
+    catHats = hats[0]['url']
+
+    print('Gato de chapéu 1: ' + catHats)
+
+    hatsRequest = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=1')
+    hats = hatsRequest.json()
+
+    catHats = hats[0]['url']
+
+    print('Gato de chapéu 2: ' + catHats)
+
+    hatsRequest = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=1')
+    hats = hatsRequest.json()
+
+    catHats = hats[0]['url']
+
+    print('Gato de chapéu 3: ' + catHats)
+
+    print('-----------------------------------------------')
+
+    print('==> Gatos com Óculos <==\n')
+
+    sunglass = str
+    catSunglasses = str
+
+    requestSunglass = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=4')
+    sunglass = requestSunglass.json()
+
+    catSunglasses = sunglass[0]['url']
+
+    print('Gato de óculos 1: ' + catSunglasses)
+
+    requestSunglass = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=4')
+    sunglass = requestSunglass.json()
+
+    catSunglasses = sunglass[0]['url']
+
+    print('Gato de óculos 2: ' + catSunglasses)
+
+    requestSunglass = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=4')
+    sunglass = requestSunglass.json()
+
+    catSunglasses = sunglass[0]['url']
+
+    print('Gato de óculos 3: ' + catSunglasses)
 
 
 if __name__ == '__main__':
