@@ -19,7 +19,7 @@ def main():
     arquivo.write('############ The Cat API ############\n\n')
 
     #print('==> Raças Encontradas <==\n')
-    print('Salvando 67 raças')
+    print('Salvando 67 raças de gatos encontradas')
     arquivo.write('==> Raças Encontradas <==\n\n')
     x = 0
     numero = len(breeds)
