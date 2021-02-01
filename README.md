@@ -1,9 +1,9 @@
 # Site Reliability Engineering (teste)
 
 ### Linguagem:  Python Versão: 3.6.9
-### Ferramentas: Pip 9.0.1
-### DB: salvo temporariamente em arq.txt
-### SO: ubuntu
+### Ferramentas: Pip 9.0.1  (em costrução Flask/ Flask-SQLAlchemy / Flask-Restful / Jsonify)
+### DB: Salvo temporariamente em arq.txt (SQLite em construção)
+### SO: Linux - Ubuntu
 ### API: https://thecatapi.com/
 
 ## Instruções:
