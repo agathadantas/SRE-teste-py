@@ -1,7 +1,7 @@
 # Site Reliability Engineering (teste)
 
 ### Linguagem:  Python
-### DB: mongoDB (em construção, salvo temporariamente em arq.txt)
+### DB: salvo temporariamente em arq.txt
 ### SO: Linux
 ### API: https://thecatapi.com/
 
