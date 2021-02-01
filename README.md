@@ -1,6 +1,6 @@
 # Site Reliability Engineering (teste)
 
-### Linguagem:  Python
+### Linguagem:  Python3
 ### DB: salvo temporariamente em arq.txt
 ### SO: Linux
 ### API: https://thecatapi.com/
