@@ -3,9 +3,9 @@ import requests
 
 
 def main():
-    print('#####################################')
-    print('############ The Cat API ############')
-    print('#####################################\n')
+    # print('#####################################')
+    # print('############ The Cat API ############')
+    # print('#####################################\n')
 
     request = requests.get(
         'https://api.thecatapi.com/v1/breeds')
@@ -14,7 +14,13 @@ def main():
     id_User = str
     img = str
 
-    print('==> Raças Encontradas <==\n')
+    print('Criando e escrevendo em arquivos de texto (modo w)')
+    arquivo = open('db-cats.txt', 'w')
+    arquivo.write('############ The Cat API ############\n\n')
+
+    #print('==> Raças Encontradas <==\n')
+    print('Salvando 67 raças')
+    arquivo.write('==> Raças Encontradas <==\n\n')
     x = 0
     numero = len(breeds)
 
@@ -34,16 +40,21 @@ def main():
         description = breeds[x]['description']
 
         x += 1
-
+        print(x)
         requestImg = requests.get(
             'https://api.thecatapi.com/v1/images/search?breed_ids={0}&include_breeds=true?format=json'.format(id_User))
         img = requestImg.json()
 
-        print('RAÇA: ' + breed)
+        arquivo.write('RAÇA: ' + breed + "\n")
+        arquivo.write('ORIGEM: ' + origin + "\n")
+        arquivo.write('TEMPERAMENTO: ' + temperament + "\n")
+        arquivo.write('DESCRIÇÃO: ' + description + "\n")
+
+        #print('RAÇA: ' + breed)
         # print('id: ' + id_User)
-        print('ORIGEM: ' + origin)
-        print('TEMPERAMENTO: ' + temperament)
-        print('DESCRIÇÃO: ' + description)
+        #print('ORIGEM: ' + origin)
+        #print('TEMPERAMENTO: ' + temperament)
+        #print('DESCRIÇÃO: ' + description)
         if (num < 3):
 
             pic_one = img[0]['url']
@@ -62,16 +73,20 @@ def main():
             pic_three = img[0]['url']
             num = 0
 
-        print('IMAGENS: ' + pic_one)
-        print('IMAGENS: ' + pic_two)
-        print('IMAGENS: ' + pic_three)
-        print('\n')
+        arquivo.write('IMAGEM 1: ' + pic_one + "\n")
+        arquivo.write('IMAGEM 2: ' + pic_two + "\n")
+        arquivo.write('IMAGEM 3: ' + pic_three + "\n")
+        arquivo.write("\n")
 
-    # print(x)
+        #print('IMAGEM 1: ' + pic_one)
+        #print('IMAGEM 2: ' + pic_two)
+        #print('IMAGEM 3: ' + pic_three)
+        # print('\n')
 
-    print('-----------------------------------------------')
+    # print('-----------------------------------------------')
 
-    print('==> Gatos com Chapéu <==\n')
+    #print('==> Gatos com Chapéu <==\n')
+    arquivo.write('==> Gatos com Chapéu <==\n')
     hats = str
     catHats = str
 
@@ -80,8 +95,18 @@ def main():
     hats = hatsRequest.json()
 
     catHats = hats[0]['url']
+    arquivo.write('Gato de chapéu 1: ' + catHats + "\n")
 
-    print('Gato de chapéu 1: ' + catHats)
+    #print('Gato de chapéu 1: ' + catHats)
+
+    hatsRequest = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=1')
+    hats = hatsRequest.json()
+
+    catHats = hats[0]['url']
+    arquivo.write('Gato de chapéu 2: ' + catHats + "\n")
+
+    #print('Gato de chapéu 2: ' + catHats)
 
     hatsRequest = requests.get(
         'https://api.thecatapi.com/v1/images/search?category_ids=1')
@@ -89,19 +114,15 @@ def main():
 
     catHats = hats[0]['url']
 
-    print('Gato de chapéu 2: ' + catHats)
+    arquivo.write('Gato de chapéu 3: ' + catHats + "\n")
+    arquivo.write("\n")
 
-    hatsRequest = requests.get(
-        'https://api.thecatapi.com/v1/images/search?category_ids=1')
-    hats = hatsRequest.json()
+    #print('Gato de chapéu 3: ' + catHats)
 
-    catHats = hats[0]['url']
+    # print('-----------------------------------------------')
 
-    print('Gato de chapéu 3: ' + catHats)
-
-    print('-----------------------------------------------')
-
-    print('==> Gatos com Óculos <==\n')
+    #print('==> Gatos com Óculos <==\n')
+    arquivo.write('==> Gatos com Óculos <==\n')
 
     sunglass = str
     catSunglasses = str
@@ -111,24 +132,37 @@ def main():
     sunglass = requestSunglass.json()
 
     catSunglasses = sunglass[0]['url']
-
-    print('Gato de óculos 1: ' + catSunglasses)
-
-    requestSunglass = requests.get(
-        'https://api.thecatapi.com/v1/images/search?category_ids=4')
-    sunglass = requestSunglass.json()
-
-    catSunglasses = sunglass[0]['url']
-
-    print('Gato de óculos 2: ' + catSunglasses)
+    arquivo.write('Gato de óculos 1: ' + catSunglasses + "\n")
+    #print('Gato de óculos 1: ' + catSunglasses)
 
     requestSunglass = requests.get(
         'https://api.thecatapi.com/v1/images/search?category_ids=4')
     sunglass = requestSunglass.json()
 
     catSunglasses = sunglass[0]['url']
+    arquivo.write('Gato de óculos 2: ' + catSunglasses + "\n")
 
-    print('Gato de óculos 3: ' + catSunglasses)
+    #print('Gato de óculos 2: ' + catSunglasses)
+
+    requestSunglass = requests.get(
+        'https://api.thecatapi.com/v1/images/search?category_ids=4')
+    sunglass = requestSunglass.json()
+
+    catSunglasses = sunglass[0]['url']
+    arquivo.write('Gato de óculos 3: ' + catSunglasses + "\n")
+
+    #print('Gato de óculos 3: ' + catSunglasses)
+
+    arquivo.close()
+
+    print('Abrindo arquivo txt')
+
+    # Lendo o arquivo criado:
+    arquivo = open('db-cats.txt', 'r')
+    for linha in arquivo:
+        linha = linha.rstrip()
+        print(linha)
+    arquivo.close()
 
 
 if __name__ == '__main__':
