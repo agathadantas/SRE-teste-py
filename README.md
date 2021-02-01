@@ -1,8 +1,9 @@
 # Site Reliability Engineering (teste)
 
-### Linguagem:  Python3
+### Linguagem:  Python Versão: 3.6.9
+### Ferramentas: Pip 9.0.1
 ### DB: salvo temporariamente em arq.txt
-### SO: Linux
+### SO: ubuntu
 ### API: https://thecatapi.com/
 
 ## Instruções:
